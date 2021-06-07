@@ -3,6 +3,6 @@ ADD . /src
 WORKDIR /src
 RUN mvn clean install
 
-FROM tomcat:9.0
+FROM tomcat:9.0-slim
 EXPOSE 8080
 COPY --from=build /src/target/HelloWorld.war /usr/local/tomcat/webapps/
